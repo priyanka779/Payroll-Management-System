@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  
+  has_one :employee 
   
   enum role: [:employee , :admin ,:hr ,:finance ].map{|x| [x.to_s, x.to_s]}.to_h
   after_initialize :set_default_role , :if => :new_record?

@@ -1,7 +1,8 @@
 class EmployeesController < ApplicationController
-  before_action :authenticate_user!,except: [:show]
+  before_action :authenticate_user!
   def index
     @employees = Employee.all
+    
   end
   def show
     @employee = Employee.find(params[:id])
@@ -11,14 +12,13 @@ class EmployeesController < ApplicationController
   end
   def create
     @employee = Employee.new(employee_params)
-
+    @employee.user = current_user
     if @employee.save
       redirect_to @employee
     else
       render :new 
     end
   end 
-
   def edit
     @employee = Employee.find(params[:id])
   end

@@ -8,6 +8,7 @@
         <%= f.text_field :employee_id,placeholder: "Employee_id" %>
       </div>
       <div class="controls">
+        <%=f.label :Date_of_Birth%>
         <%= f.date_field :date_of_birth,as: :bootstrap_datepicker %>
       </div>
       <div class="controls">
@@ -17,6 +18,7 @@
         <%= f.select(:gender , options_for_select([['Male', 'M'], ['Female', 'F']]), {:prompt => 'Select Gender', :selected => f})%>
       </div>
       <div class="controls">
+      <%=f.label :Date_of_Joining%>
         <%= f.date_field :date_of_join,as: :bootstrap_datepicker %>
       </div>
       <div class="controls">

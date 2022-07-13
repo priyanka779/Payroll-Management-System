@@ -1,26 +1,22 @@
 <div class="content-wrapper">
-  <% @employees.each do |employee|%>
-    <table class="table table- table-striped">
-      <tbody>
-      <thead>
+  <table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Gender</th>
+        <th scope="col">HireDate</th>
+        <th scope="col">Mobile </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee|%>
         <tr>
-          <td>Department:</td>
-          <td><%= employee.employee_id %></td>
+          <th><%= employee.employee_id %></th>
+          <th><%= employee.gender %></th>
+          <th><%= employee.date_of_join %></th>
+          <th><%= employee.mobile %></th>
         </tr>
-        <tr>
-          <td>Hire date:</td>
-          <td><%= employee.date_of_join %></td>
-        </tr>
-        <tr>
-          <td>Date of Birth</td>
-          <td><%= employee.date_of_birth %></td>
-        </tr>
-        <tr>
-          <td>Gender</td>
-          <td><%= employee.gender %></td>
-        </tr>
-        <thead>
-      </tbody>
-    </table>
-  <%end%>
+      <%end%>
+    </tbody>
+  </table>
 </div>
