@@ -1,0 +1,55 @@
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="index3.html" class="nav-link"></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <%= link_to "Employee", employees_path %>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="#" class="nav-link">HR</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="#" class="nav-link">Finance</a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a href="#" class="nav-link">Contact</a>
+    </li>
+    <form class="form-inline ml-3 me-5">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <div >
+      <%if current_user%>
+        <li class="nav-item d-none d-sm-inline-block me-5">
+          <h2><%= current_user.name%></h2>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block me-5">
+          <h2><%= current_user.role%></h2>
+        </li>
+        <%# <li class="nav-item d-none d-sm-inline-block me-5">
+          <h2> <%= button_to"Edit Account", edit_user_registration_path%></h2>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block me-5">
+          <h2><%= button_to "Logout", destroy_user_session_path,data: {turbo: "false"}, method: :delete  %> </h2>
+        </li>
+      <%else%>
+        <li class="nav-item d-none d-sm-inline-block me-5">
+         <%= button_to "Login",  new_user_session_path%>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block me-5">
+         <%= link_to "Create Account", new_user_registration_path %>
+        </li>
+      <%end%>
+    </div>
+  </ul>
+</nav>

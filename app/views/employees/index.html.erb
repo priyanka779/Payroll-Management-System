@@ -1,0 +1,26 @@
+<div class="content-wrapper">
+  <% @employees.each do |employee|%>
+    <table class="table table- table-striped">
+      <tbody>
+      <thead>
+        <tr>
+          <td>Department:</td>
+          <td><%= employee.employee_id %></td>
+        </tr>
+        <tr>
+          <td>Hire date:</td>
+          <td><%= employee.date_of_join %></td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td><%= employee.date_of_birth %></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td><%= employee.gender %></td>
+        </tr>
+        <thead>
+      </tbody>
+    </table>
+  <%end%>
+</div>
