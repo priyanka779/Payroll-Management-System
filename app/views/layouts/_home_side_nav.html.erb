@@ -19,37 +19,39 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
-        <!-- Add icons to the links using the .nav-icon class
-            with font-awesome or any other icon font library -->
+        <li class="nav-icon fas fa-tachometer-alt" >
+        <p>
+          <%= link_to "Dashboard", root_path%>
+          </p>
+        </li>
         <li class="nav-item has-treeview menu-open">
           <a href="" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>employee<i class="right fas fa-angle-left"></i>
-              <li><a class="dropdown-item" href="#">Employee List</a></li>
-              <li><a class="dropdown-item" href="#">Employee Attandance</a></li>
-              <li><a class="dropdown-item" href="#">Add Employee</a></li>
-          </p>
-        </a>
-      </li>
-      <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link active">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
-          <p>
-            Department
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-      </li>
-      <li class="nav-item has-treeview menu-open">
-        <a href="#" class="nav-link active">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
-          <p>
-            Attandance
-            <i class="right fas fa-angle-left"></i>
-          </p>
-        </a>
-      </li>
-   
+              <li class="dropdown-item"><%= link_to "Employee List", employees_path %></li>
+              <li class="dropdown-item" ><%= link_to "Employee Attandance",employees_path%></li>
+              <li class="dropdown-item" ><%= link_to "Add Employee", new_employee_path %></li>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Department
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview menu-open">
+          <a href="#" class="nav-link active">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>
+              Attandance
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="pages/widgets.html" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
