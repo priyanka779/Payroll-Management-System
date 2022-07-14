@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2022_07_13_113852) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.string "designation"
     t.index ["employee_id"], name: "index_employees_on_employee_id", unique: true
     t.index ["user_id"], name: "index_employees_on_user_id", unique: true
   end

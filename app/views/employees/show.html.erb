@@ -1,31 +1,43 @@
 <%= stylesheet_link_tag 'emolpyee_form' %>
-<div class="content-wrapper">
-  <div class="card border-success">
-    <div class="card-header text-center"><%= current_user.name%></div>
-    <div class="card-body text-success">
-      <h5 class="card-title">Y</h5>
-      <p class="card-text tex">
-        <div >
-          <strong>Employee id:-</strong>
-          <%= @employee.employee_id%>
-        </div>
-        <div >
-          <strong>Date of Joining:-</strong>
-          <%= @employee.date_of_join%>
-        </div>
-        <div>
-          <strong>DOB:-</strong>
-          <%= @employee.date_of_birth%>
-        </div>
-        <div>
-          <strong>Gender:-</strong>
-          <%= @employee.gender%>
-        </div>
-        <div>
-          <strong>Mobile no:-</strong>
-          <%= @employee.mobile%>
-        </div>
-      </p>
+<div class="content-wrapper text-center">
+<div class= "text-center">
+<h1 class= ""><%= current_user.name%></h1>
+</div>
+  <aside class="profile-card">
+    <header>
+      <a><img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/tgnbc9nlrdnt70j0qmbx"></a>
+
+    </header>
+    <div class="profile-bio">
+    
+      <div >
+        <strong>Employee id:-</strong>
+        <%= @employee.employee_id%>
+      </div>
+      <div >
+        <strong>Date of Joining:-</strong>
+        <%= @employee.date_of_join%>
+      </div>
+      <div>
+        <strong>DOB:-</strong>
+        <%= @employee.date_of_birth%>
+      </div>
+      <div>
+        <strong>Gender:-</strong>
+        <%= @employee.gender%>
+      </div>
+      <div>
+        <strong>Mobile no:-</strong>
+        <%= @employee.mobile%>
+      </div>
+      <div>
+        <strong>Designation:-</strong>
+        <%= @employee.designation%>
+      </div>
+      <div>
+        <strong>Active:-</strong>
+        <%= @employee.is_active%>
+      </div>
     </div>
-  </div>
+  </aside>
 </div>
