@@ -1,8 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @employees = Employee.all
-    
+    @employees = Employee.all  
   end
   def show
     @employee = Employee.find(params[:id])
@@ -29,6 +28,6 @@ class EmployeesController < ApplicationController
   end
   private
   def employee_params
-    params.require(:employee).permit(:employee_id,:date_of_birth,:gender,:mobile, :date_of_join,:city)
+    params.require(:employee).permit(:employee_id,:date_of_birth,:gender,:mobile, :date_of_join,:city,:designation)
   end
 end

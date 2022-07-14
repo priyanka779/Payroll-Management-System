@@ -1,15 +1,14 @@
 const { environment } = require("@rails/webpacker");
-const webpack = require("webpack");
 
+const webpack = require("webpack");
 // Add an additional plugin of your choosing : ProvidePlugin
-environment.plugins.prepend(
+environment.plugins.append(
   "Provide",
   new webpack.ProvidePlugin({
-    $: "jquery",
-    jQuery: "jquery",
-    jquery: "jquery",
-    "window.Tether": "tether",
-    Popper: ["popper.js", "default"] // for Bootstrap 4
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery',
+    Popper: ['popper.js', 'default'] 
   })
 );
 
