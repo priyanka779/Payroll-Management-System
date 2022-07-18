@@ -24,3 +24,13 @@ Things you may want to cover:
 * ...
 # payroll
 # payroll
+  <%if current_user.employee.nil?%>
+
+<% else %>
+  <div class="content-wrapper">
+    <div class="text-center">
+      <h1 style="padding:300px; color:navy;"><%= "Your Profile are alredy submited by you"%></h1><br>
+        <%= link_to 'Back ', root_path %>
+    </div>
+  </div>
+<% end %>

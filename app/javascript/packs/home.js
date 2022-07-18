@@ -1,3 +1,8 @@
+
+import "jquery"
+window.$ = window.jQuery = $;
+
+require("@popperjs/core")
 var jQuery = require("jquery");
 
 // import jQuery from "jquery";

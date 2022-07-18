@@ -1,26 +1,38 @@
+<<%= stylesheet_link_tag 'employee' %>>
 <div class="content-wrapper">
-  <% @employees.each do |employee|%>
-    <table class="table table- table-striped">
-      <tbody>
-      <thead>
+  <table class="table table-striped ">
+    <thead style="color:navy;">
+      <tr>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email id</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Date of Joining</th>
+        <th scope="col">Mobile </th>
+        <th scope="col">Designation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee|%>
         <tr>
-          <td>Department:</td>
-          <td><%= employee.employee_id %></td>
+          <th><%= employee.employee_id %></th>
+          <th><%= employee.user.name%></th>
+          <th><%= employee.user.email %></th>
+          <th><%= employee.gender %></th>
+          <th><%= employee.date_of_join %></th>
+          <th><%= employee.mobile %></th>
+          <th><%= employee.designation %></th>
+
         </tr>
-        <tr>
-          <td>Hire date:</td>
-          <td><%= employee.date_of_join %></td>
-        </tr>
-        <tr>
-          <td>Date of Birth</td>
-          <td><%= employee.date_of_birth %></td>
-        </tr>
-        <tr>
-          <td>Gender</td>
-          <td><%= employee.gender %></td>
-        </tr>
-        <thead>
-      </tbody>
-    </table>
-  <%end%>
+      <%end%>
+    </tbody>
+  </table>
+  <div class="menu list-view pmd-floating-action" role="navigation" >
+  <a class="pmd-floating-action-btn btn pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-success" data-title="Add Employee" href = "employees/new.html" style="height: 50px;
+  width: 50px;
+  border-radius: 50%; margin-left:1350px">
+  <i class="material-icons pmd-sm text-bold text-justify">+</i>
+  </a>
+
+  </div>
 </div>
