@@ -1,0 +1,2 @@
+class LeaveManagement < ApplicationRecord
+end
