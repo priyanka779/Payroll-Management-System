@@ -1,0 +1,35 @@
+  <div class="container"></div>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <div class="form-style-5">        
+          <%= form_with(model: @hr) do |form| %>         
+            <center><legend>Leave Performa</legend></center>
+            <%= form.label :Name %>
+            <%= form.text_field :name %>
+
+            <%= form.label :code %>
+            <%= form.text_field :code, size: "70x2" %>
+
+            <%= form.label :leave_type %>
+            <%= form.text_field :leave_type, size: "70x1" %>
+
+            <%= form.label :leave_unit %>
+            <%= form.text_area :leave_unit, size: "70x1" %> 
+                        
+            <%= form.label :Leave_reason %>
+            <%= form.text_area :description, size: "70x1" %>
+     
+            <%= form.label :date_start, class: 'col-md-2 control-label' %>
+            <%= form.date_field :date_start %>
+            
+            <%= form.label :date_end , class: 'col-md-2 control-label' %>
+            <%= form.date_field :date_end, class: 'form-control date_picker' %>
+              
+            <div>
+            <%= form.submit %>
+           </div>   
+          <%end%>
+        </div> 
+      </div>
+    </div>
+  </div> 
