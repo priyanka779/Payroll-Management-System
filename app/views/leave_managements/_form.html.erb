@@ -1,0 +1,23 @@
+
+<div class="content-wrapper">
+  <div class="row justify-content">
+    <div class="form-style-5">
+      <%= form_with(model: @leave_management ) do |form| %>
+        <center><legend>Leave Form</legend></center>
+        <%= form.label :leave_type %>
+        <%= form.text_field :leave_type %>
+        <%= form.label :leave_unit %>
+        <%= form.text_field :leave_unit %>
+        <%= form.label :Leave_reason %>
+        <%= form.text_area :reason %>
+        <%= form.label :date_start  %>
+        <%= form.date_field :start_date %>
+        <%= form.label :date_end  %>
+        <%= form.date_field :end_date %>
+        <div>
+          <%= form.submit  %>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

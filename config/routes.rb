@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+  resources :leave_managements
   get 'departments/index'
   resources :employees
   devise_for :users

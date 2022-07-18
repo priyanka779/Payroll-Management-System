@@ -1,9 +1,6 @@
-
-
 <div class="content-wrapper ">
-<div class ="container">
-<table class="table table-striped ">
-  <thead style="color:navy;">
+  <table class="table table-striped ">
+    <thead style="color:navy;">
       <tr>
         <th scope="col">Department Id</th>
         <th scope="col">Department Name</th>
@@ -11,13 +8,11 @@
       </tr>
     </thead>
     <% @departments.each do |department|%>
-        <tr>
-          <th><%= department.id %></th>
-          <th><%= department.name%></th>
-          <th><%= link_to   department.employee_ids%></th>
-
-        </tr>
-      <%end%>
-    </table>
-    </div>
+      <tr>
+        <th><%= department.id %></th>
+        <th><%= department.name%></th>
+        <th><%= link_to   (department.employee_ids)%></th>
+      </tr>
+    <%end%>
+  </table>
 </div>
