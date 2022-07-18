@@ -1,6 +1,7 @@
+<<%= stylesheet_link_tag 'employee' %>>
 <div class="content-wrapper">
   <table class="table table-striped ">
-    <thead>
+    <thead style="color:navy;">
       <tr>
         <th scope="col">Employee Id</th>
         <th scope="col">Name</th>
@@ -26,4 +27,12 @@
       <%end%>
     </tbody>
   </table>
+  <div class="menu list-view pmd-floating-action" role="navigation" >
+  <a class="pmd-floating-action-btn btn pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-success" data-title="Add Employee" href = "employees/new.html" style="height: 50px;
+  width: 50px;
+  border-radius: 50%; margin-left:1350px">
+  <i class="material-icons pmd-sm text-bold text-justify">+</i>
+  </a>
+
+  </div>
 </div>

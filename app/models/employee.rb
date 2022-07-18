@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
   #---------Add assosiation--------------
   belongs_to :user
-
+  belongs_to :department
   #---------Add Validation ---------------
 
   validates :employee_id, presence: true, uniqueness: true

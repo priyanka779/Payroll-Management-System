@@ -7,8 +7,14 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
   end
   def new
+    if current_user.employee.nil? 
     @employee = Employee.new
+    else 
+      # render :inline => "<h1> Your Profile are alredy submited by you</h1>"
+      render :blank
+    end
   end
+  
   def create
     @employee = Employee.new(employee_params)
     @employee.user = current_user
@@ -25,6 +31,8 @@ class EmployeesController < ApplicationController
   end
 
   def destroy
+  end
+  def blank
   end
   private
   def employee_params
