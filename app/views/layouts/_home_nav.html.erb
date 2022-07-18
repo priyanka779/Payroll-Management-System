@@ -3,32 +3,6 @@
     <li class="nav-item">
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="index3.html" class="nav-link"></a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">HR</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">Finance</a>
-    </li>
-    <li class="nav-item d-none d-sm-inline-block">
-      <a href="#" class="nav-link">Contact</a>
-    </li>
-    <form class="form-inline ml-3 me-5">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    <div >
       <%if current_user%>
         <li class="nav-item d-none d-sm-inline-block me-5">
           <h2><%= current_user.name%></h2>
@@ -50,6 +24,6 @@
          <%= link_to "Create Account", new_user_registration_path %>
         </li>
       <%end%>
-    </div>
+   
   </ul>
 </nav>
