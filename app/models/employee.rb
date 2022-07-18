@@ -1,7 +1,7 @@
 class Employee < ApplicationRecord
   #---------Add assosiation--------------
   belongs_to :user
-  belongs_to :department
+  # belongs_to :department
   #---------Add Validation ---------------
 
   validates :employee_id, presence: true, uniqueness: true
@@ -11,5 +11,5 @@ class Employee < ApplicationRecord
   number_regex = /\b^([6789][0-9]{9})$\b/
   validates_format_of :mobile, :with =>  number_regex, :message => " No only indian without spaces are allowed"
   
-
+  
 end 

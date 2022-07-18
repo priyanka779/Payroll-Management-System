@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'departments/index'
   resources :employees
   resources :hrs
   devise_for :users
