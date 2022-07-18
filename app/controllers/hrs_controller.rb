@@ -1,5 +1,4 @@
 class HrsController < ApplicationController
-   
     def index
         @hrs = Hr.all
     end
@@ -37,6 +36,6 @@ class HrsController < ApplicationController
     private  
 
     def hr_params
-    params.require(:hr).permit(:name,:code,:type,:leave_unit,:description,:leave_type,:date_start,:date_end)
+    params.require(:hr).permit(:leave_type,:leave_unit,:reason,:start_date,:end_date)
     end
 end

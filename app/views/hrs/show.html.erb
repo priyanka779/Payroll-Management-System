@@ -3,27 +3,20 @@
      
 	    <thead>
 		    <center><h2> Leave Detail </h2></center>	
-		    <th>Employee ID</th>
-			<th>Name</th>
             <th>leave type</th>
 			<th>leave Unit</th>
-			<th>Leave reason</th>
+			<th>reason</th>
 			<th>Date start</th>
 			<th>Date end</th>
 			<th>Admin Remark</th>
 		</thead>
         <tbody>
             <tr>
-			<td><%= @hr.code %></td>
-        	<td><%= @hr.name %></td>
 			<td><%= @hr.leave_type %></td>
 		    <td><%= @hr.leave_unit %></td>
-		    <td><%= @hr.description %></td>
-	        <td><%= @hr.date_start %></td>
-		    <td><%= @hr.date_end %></td>
-			
-		    <td><a href="accept" class="accept">Approve <span class="fa fa-check"></span></a></td>
-            <td><a href="reject" class="reject">Reject <span class="fa fa-close"></span></a></td>
+		    <td><%= @hr.reason %></td>
+	        <td><%= @hr.start_date %></td>
+		    <td><%= @hr.end_date %></td>		
 		   </tr>
 		</tbody>
 	</table>
