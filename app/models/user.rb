@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # --------------Using Assosiation--------------
   has_one :employee 
-
+  has_many :attandances
 
   #---------------Validation---------------------
   validates :name, presence: true

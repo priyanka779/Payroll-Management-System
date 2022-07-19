@@ -31,10 +31,12 @@
           <div  class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>employee
-              <li class="dropdown-item"><%= link_to "Employee List", employees_path %></li>
-              <li class="dropdown-item" ><%= link_to "Employee Attandance",employees_path%></li>
+            <%if current_user.role == "admin" %>
+              <li class="dropdown-item"><%= link_to "Employee List", employees_path  %></li>
+              <%end%>
+              <li class="dropdown-item" ><%= link_to "Employee Attandance",new_attandance_path%></li>
               <li class="dropdown-item" ><%= link_to "Add Employee", new_employee_path %></li>
-              <li class="dropdown-item" ><%= link_to "Apply For leave" %></li>
+              <li class="dropdown-item" ><%= link_to "Apply For leave",  new_leave_management_path%></li>
             </p>
           </a>
         </li>
@@ -50,8 +52,7 @@
           <a href="#" class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Leave Management
-             
+              LeaveManagement
             </p>
           </a>
         </li>
