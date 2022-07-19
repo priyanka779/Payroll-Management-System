@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
+
 ActiveRecord::Schema.define(version: 2022_07_19_054648) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attandances", force: :cascade do |t|
+    t.string "employee_id"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "attandance_type"
+    t.time "in_time"
+    t.time "out_time"
+    t.string "status"
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string "name"

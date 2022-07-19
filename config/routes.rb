@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-
+  resources :attandances
   resources :leave_managements
   get 'departments/index'
   resources :employees
+  resources :hrs
   devise_for :users
   root 'home#index'
   get '/widget' , to:"home#widget"
