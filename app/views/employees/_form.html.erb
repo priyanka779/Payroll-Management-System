@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'employee' %>
 <div class="content-wrapper">
-  <%= render 'shared/error'%>
+  <%= render 'shared/error',obj: @employee%>
   <%=form_with(model: @employee , :local=>false ) do |f|%>
     <!--  General -->
     <div class="form-group">
@@ -10,7 +10,7 @@
       </div>
       <div class="controls">
         <%=f.label :Date_of_Birth%>
-        <%= f.date_field :date_of_birth,as: :bootstrap_datepicker %>
+        <%= f.date_field :date_of_birth %>
       </div>
       <div class="controls">
         <%= f.text_field :mobile,placeholder: "Mobile No" %>
@@ -20,7 +20,7 @@
       </div>
       <div class="controls">
         <%=f.label :Date_of_Joining%>
-        <%= f.date_field :date_of_join,as: :bootstrap_datepicker %>
+        <%= f.date_field :date_of_join   %>
       </div>
       <div class="controls">
         <%= f.text_field :city,placeholder: "City" %>

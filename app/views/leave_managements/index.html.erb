@@ -1,18 +1,28 @@
 <div class= "content-wrapper">
-  <table class="table table-user-information">
-    <thead>
+  <table class="table table-striped">
+    <thead style="color:red;" >
       <th>Employee id</th>
       <th>Leave Type</th>
       <th>leave Unit</th>
       <th>reason</th>
       <th>Date start</th>
       <th>Date end</th>
-      <th>Action</th>
+      <th>Action for Approval</th>
+       <th>Action for Rejection</th>
     </thead>
     <tbody>
-      <tr>
-   
-      </tr>
+      <% @leave_managements.each do |lm|%>
+        <tr>
+          <th><%= lm.user.employee.employee_id %></th>
+          <th><%= lm.leave_type%></th>
+          <th><%= lm.leave_unit %></th>
+          <th><%= lm.reason %></th>
+          <th><%= lm.start_date %></th>
+          <th><%= lm.end_date %></th>
+          <td><a href="accept" class="accept">Approve <span class="fa fa-check"></span></a></td>
+          <td><a href="reject" class="reject">Reject <span class="fa fa-close"></span></a></td>
+        </tr>
+      <%end%>
     </tbody>
   </table>
 </div>

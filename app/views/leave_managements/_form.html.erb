@@ -1,22 +1,20 @@
-
 <div class="content-wrapper">
+  <%= render 'shared/error' ,obj: @leave_management %>
   <div class="row justify-content">
     <div class="form-style-5">
-      <%= form_with(model: @leave_management ) do |form| %>
+      <%=form_with model: @leave_management,local: true do |form| %>
         <center><legend>Leave Form</legend></center>
         <%= form.label :leave_type %>
-        <%= form.text_field :leave_type %>
+        <%= form.select(:leave_type , options_for_select([:paid , :unpaid ,:Casual_leave,:emergency_leave,:sick_Leave,:maternity_leave  ]), {:prompt => 'Select Leave_Type', :selected => form})%>
         <%= form.label :leave_unit %>
         <%= form.text_field :leave_unit %>
         <%= form.label :Leave_reason %>
         <%= form.text_area :reason %>
         <%= form.label :date_start  %>
-        <%= form.date_field :start_date %>
+        <%= form.date_field :start_date, min: Date.today %>
         <%= form.label :date_end  %>
-        <%= form.date_field :end_date %>
-        <div>
-          <%= form.submit  %>
-        </div>
+        <%= form.date_field :end_date ,min: Date.today %>
+        <%= form.submit "Apply for Leave"  %>
       <%end%>
     </div>
   </div>
