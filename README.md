@@ -34,3 +34,58 @@ Things you may want to cover:
     </div>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------ Accept Reject form---------
+
+
+ <%= form_for(leave_management_accept_path(lm), remote: true, data: { confirm: "You sure?"}) do |fa| %>
+            <%= fa.hidden_field :status, :value => 1 %>
+            <th><%= fa.submit "Approve", class: "btn btn-large btn-success", onclick: "lm_status.value = '1'" %></th>
+          <% end %>
+          <%= form_for(leave_management_decline_path(lm), remote: true, data: { confirm: "You sure?"}) do |fa| %>
+            <%= fa.hidden_field :status, :value => 2 %>
+            <th> <%= fa.submit "Reject", class: "btn btn-large btn-danger", onclick: "lm_status.value = '2'" %></th>
+          <% end %>
+--------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <%=form_tag(@attandance,method: :post) do %>
+      <center><legend>Mark Your Attandance</legend></center>
+       <%if @attandance.in_time == nil%>
+        <label>Check In Button:</label><br>
+        <%= hidden_field_tag :in_time,Time.new %>
+        <input type="submit" value="In Time">
+        <%else%>
+         <%= hidden_field_tag :out_time,Time.new %>
+        <label>Check out Button:</label><br>
+        <input type="submit" value=" Out Time">
+        <%end%>
+      <%end%>

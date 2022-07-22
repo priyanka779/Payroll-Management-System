@@ -1,0 +1,18 @@
+<div class="content-wrapper">
+  <table class="table table-striped">
+    <thead style="color:Green;" >
+      <th>Employee id</th>
+      <th>Check in Time</th>
+      <th>Check out Time</th>
+    </thead>
+    <tbody>
+    <%@attandances.each do |attand|%>
+    <tr>
+    <th><%= attand.user.employee.employee_id %></th>
+    <th><%= attand.in_time%></th>
+    <th><%= attand.out_time%></th>
+    <%end%>
+    </tr>
+    </tbody>
+  </table>
+</div>
