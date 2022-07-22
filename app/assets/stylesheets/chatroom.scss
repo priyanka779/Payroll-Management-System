@@ -1,0 +1,11 @@
+// Place all the styles related to the chatroom controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+#messages {
+  overflow: auto;
+}
+
+#card {
+  box-shadow: 29px 28px 1px rgba(0, 0, 0, 0.94), 29px 28px 1px rgb(246, 16, 16);
+  margin-bottom: 1rem;
+}
