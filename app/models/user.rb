@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one :employee 
   has_many :attandances
   has_many :leave_managements
+  has_many :messages
 
 
 

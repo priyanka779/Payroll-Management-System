@@ -5,9 +5,7 @@ class AttandancesController < ApplicationController
   end
 
   def new
-
-    @attandance = Attandance.new
-   
+    @attandance = Attandance.new 
   end
 
   def show
@@ -20,6 +18,7 @@ class AttandancesController < ApplicationController
     @attandance.user = current_user
     # @attandance = Attandance.where(in_time: Time.now.beginning_of_day.utc..Time.now.end_of_day.utc).first_or_create!
     if @attandance.save
+      # flash[:alert] = "Attandance  was saved"
       redirect_to @attandance
     else
       render :new

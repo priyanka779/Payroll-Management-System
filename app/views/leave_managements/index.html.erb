@@ -23,11 +23,11 @@
           <% if lm.status == "pending"%>
             <th>
               <div class="approval">
-                <%= form_tag(leave_management_accept_path(lm), remote:true ) do %>
+                <%= form_tag(leave_management_accept_path(lm),remote:true) do %>
                   <%= hidden_field_tag :status,1 %>
                   <%= submit_tag "Approve", class: "btn btn-large btn-success"  %>
                 <% end %>
-                <%= form_tag(leave_management_decline_path(lm), remote:true ) do %>
+                <%= form_tag(leave_management_decline_path(lm),remote:true) do %>
                   <%= hidden_field_tag :status,2 %>
                   <%= submit_tag "Reject", class: "btn btn-large btn-danger"%>
                 <% end %>

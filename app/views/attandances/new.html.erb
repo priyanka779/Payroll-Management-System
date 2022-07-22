@@ -1,16 +1,12 @@
 <div class="content-wrapper">
   <div class="row justify-content">
     <div class="form-style-5">
-      <%=form_with(model: @attandance ) do |f|%>
-     
+      <%=form_with(model: @attandance,:local=>false ) do |f|%>
         <%= f.datetime_field :in_time ,min: Date.today ,max: Date.today+1 %>
         <%= f.submit"Check-In", data: { disable_with: "Please wait..." } %>
-        
         <%= f.datetime_field :out_time ,min: Date.today ,max: Date.today+1 %>
         <%= f.submit"Checkout", data: { disable_with: "Please wait..." } %>
-        
       <%end%>
-      <%console%>
     </div>
   </div>
 </div>
