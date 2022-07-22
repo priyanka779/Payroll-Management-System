@@ -7,8 +7,8 @@
       <th>reason</th>
       <th>Date start</th>
       <th>Date end</th>
+      <th> status</th>
       <th>Action for Approval</th>
-       <th>Action for Rejection</th>
     </thead>
     <tbody>
       <% @leave_managements.each do |lm|%>
@@ -19,8 +19,21 @@
           <th><%= lm.reason %></th>
           <th><%= lm.start_date %></th>
           <th><%= lm.end_date %></th>
-          <td><a href="accept" class="accept">Approve <span class="fa fa-check"></span></a></td>
-          <td><a href="reject" class="reject">Reject <span class="fa fa-close"></span></a></td>
+          <th><%= lm.status %></th>
+          <% if lm.status == "pending"%>
+            <th>
+              <div class="approval">
+                <%= form_tag(leave_management_accept_path(lm), remote:true ) do %>
+                  <%= hidden_field_tag :status,1 %>
+                  <%= submit_tag "Approve", class: "btn btn-large btn-success"  %>
+                <% end %>
+                <%= form_tag(leave_management_decline_path(lm), remote:true ) do %>
+                  <%= hidden_field_tag :status,2 %>
+                  <%= submit_tag "Reject", class: "btn btn-large btn-danger"%>
+                <% end %>
+              </div>
+            </th>
+          <%end%>
         </tr>
       <%end%>
     </tbody>

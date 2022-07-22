@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-
+ 
   resources :attandances
-  resources :leave_managements
+  resources :leave_managements do
+    post "/accept", to: "leave_managements#accept"
+    post "/decline", to: "leave_managements#decline"
+  end
   get 'departments/index'
   resources :employees
   resources :hrs

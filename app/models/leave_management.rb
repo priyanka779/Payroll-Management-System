@@ -9,6 +9,19 @@ class LeaveManagement < ApplicationRecord
   validates :reason ,presence:true ,length: { maximum: 500 }
   validates :start_date, :end_date, presence: true
   # validate :end_date_after_start_date
+  enum status: { pending: 0, accepted: 1, rejected: 2 }
+ 
+
+
+
+
+
+
+
+
+
+
+  # ----------------------------------------------------------------------------
 
   # private
   

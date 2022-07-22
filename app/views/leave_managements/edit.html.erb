@@ -1,0 +1,10 @@
+<div class="content-wrapper">
+<%= form_for(leave_management_accept_path(lm), remote: true, data: { confirm: "You sure?"}) do |fa| %>
+  <%= fa.hidden_field :status, :value => 1 %>
+  <th><%= fa.submit "Approve", class: "btn btn-large btn-success", onclick: "lm_status.value = '1'" %></th>
+<% end %>
+<%= form_for(leave_management_decline_path(lm), remote: true, data: { confirm: "You sure?"}) do |fa| %>
+  <%= fa.hidden_field :status, :value => 2 %>
+  <th> <%= fa.submit "Reject", class: "btn btn-large btn-danger", onclick: "lm_status.value = '2'" %></th>
+<% end %>
+</div>
