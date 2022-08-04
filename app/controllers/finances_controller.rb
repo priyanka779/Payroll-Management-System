@@ -9,12 +9,12 @@ class FinancesController < ApplicationController
       @user = @finance.user
       respond_to do |format|
         if params[:layout] == "pdf"
-          format.html { render layout: false, template:"finances/show.pdf.erb" }
+          format.html { render layout: false, template: "finances/show.pdf.erb" }
         else
           format.html
         end
         format.pdf do
-          render pdf: "file_name", template:"finances/show.pdf.erb" # Excluding ".pdf" extension.       
+          render pdf: "file_name", template: "finances/show.pdf.erb"  # Excluding ".pdf" extension.
         end
       end
     end
