@@ -1,3 +1,4 @@
+# RAILS_ENV=logging_development scripts/rails console
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -85,3 +86,4 @@ production:
   database: payroll_production
   username: payroll
   password: <%= ENV['PAYROLL_DATABASE_PASSWORD'] %>
+  

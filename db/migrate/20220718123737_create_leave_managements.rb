@@ -6,7 +6,7 @@ class CreateLeaveManagements < ActiveRecord::Migration[6.1]
       t.string  :reason
       t.date :start_date
       t.date :end_date
-
+      
       t.timestamps
     end
   end

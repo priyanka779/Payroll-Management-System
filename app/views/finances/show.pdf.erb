@@ -1,0 +1,54 @@
+<style>
+/* ISO Paper Size */
+/* body {
+  size: A4 landscape;
+} */
+
+/* Size in mm */    
+/* body {
+  size: 100mm 200mm landscape;
+} */
+
+/* Size in inches */    
+/* body {
+  size: 4in 6in landscape;
+} */
+/* body {
+    width: 4in;
+    height: 6in;
+} */
+</style>
+
+<br><br><br><br><br><br>
+
+<center><div class="profile-bio">
+<h2><strong><u>Salary Detail</u></strong></h2><br><br>
+<div>
+    <strong>Role :-</strong>
+    <%= @user.role %>
+</div><br>
+
+<div>
+    <strong>Name :-</strong>
+    <%= @user.name %>
+</div><br>
+
+<div>
+    <strong>Email :-</strong>
+    <%= @user.email %>
+</div><br>
+
+<div>
+    <strong>Basic Salary :-</strong>
+    <%= @finance.basic_salary %> 
+</div><br>
+
+<div>
+    <strong>deduction :-</strong>
+    <%= @finance.deduction %>
+</div><br><hr>
+
+<div>
+    <strong>Net Salary :-</strong>
+    <%= @finance.net_salary %> 
+</div><br><hr></center> 

@@ -8,8 +8,7 @@ class User < ApplicationRecord
   has_many :attandances
   has_many :leave_managements
   has_many :messages
-
-
+  has_many :finances
 
   #---------------Validation---------------------
   validates :name, presence: true
@@ -22,14 +21,4 @@ class User < ApplicationRecord
   def set_default_role
     self.role ||= :user
   end
-
-
-
-
-
-
-
-
-
-
 end

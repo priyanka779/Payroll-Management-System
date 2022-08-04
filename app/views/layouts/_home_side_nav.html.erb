@@ -47,9 +47,9 @@
           <a class="nav-link active">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Department
+              Department</p>
               <% if user_signed_in?%>
-                <%if current_user.role == 'admin'|| current_user.role == 'hr' %>
+                <%if current_user.admin? || current_user.role == 'hr' %>
                   <li class="dropdown-item"><%=link_to "Department List", departments_index_path%></li>
                 <%end%>
               <%end%>
@@ -69,6 +69,22 @@
               </p>
             </a>
           </li>
+          <p>
+          
+          <li class="nav-item has-treeview menu-open">
+            <a class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+              Finance Department
+              <% if user_signed_in? %>
+                <%if current_user.role == 'hr' %>
+                  <li class="dropdown-item"><%=link_to "Finances ", new_finance_path %></li>
+                   <li class="dropdown-item"><%=link_to "Finance" %></li>
+                <%end%>
+                 <li class="dropdown-item" ><%= link_to "Salary",  new_finance_path%></li>
+              <%end%>
+            </p>
+            
           <li class="nav-item">
             <div  class="nav-link">
               <i class="nav-icon fas fa-th"></i>

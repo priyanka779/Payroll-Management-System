@@ -13,7 +13,7 @@
     <tbody>
       <% @leave_managements.each do |lm|%>
         <tr>
-          <th><%= lm.user.employee.employee_id %></th>
+          <%# <th><%= lm.user.employee.employee_id %></th>
           <th><%= lm.leave_type%></th>
           <th><%= lm.leave_unit %></th>
           <th><%= lm.reason %></th>

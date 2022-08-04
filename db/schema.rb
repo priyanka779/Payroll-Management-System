@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_22_111827) do
+ActiveRecord::Schema.define(version: 2022_07_26_104350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 2022_07_22_111827) do
     t.index ["department_id"], name: "index_employees_on_department_id"
     t.index ["employee_id"], name: "index_employees_on_employee_id", unique: true
     t.index ["user_id"], name: "index_employees_on_user_id", unique: true
+  end
+
+  create_table "finances", force: :cascade do |t|
+    t.integer "basic_salary"
+    t.integer "allowance"
+    t.integer "deduction"
+    t.integer "net_salary"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"  
+    t.index ["user_id"], name: "index_finances_on_user_id"
   end
 
   create_table "leave_managements", force: :cascade do |t|

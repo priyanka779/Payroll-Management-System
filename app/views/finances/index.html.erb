@@ -1,0 +1,36 @@
+<div class= "content-wrapper">
+  <div class="media-body">
+    <table class="table table-user-information">
+        <thead style="color:navy;">
+          <h1><center><strong>Salary Detail</strong></center></h1><br>  
+          <tr>
+            <th>Basic Salary</th>
+            <th>Deduction</th> 
+            <th>Net Salary</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>status</th>
+            <th>Action</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>  
+          <% @finances.each do |fin|%>
+           <tr>
+            <td><%= fin.basic_salary %></td>
+            <td><%= fin.deduction %></td> 
+            <td><%= net_salary = ((fin.basic_salary.to_i) - (fin.deduction.to_i))%></td>
+            <td><%= User.find(fin.user_id).name %></td> 
+            <td><%= User.find(fin.user_id).email %></td> 
+            <td><%= User.find(fin.user_id).role %></td>   
+            <td><%= link_to "show", finance_path(fin), class: "btn btn-outline-success" %></td>
+            <td><%= link_to "PDF", finance_path(fin, format: "pdf"), class: "btn btn-outline-success" %></td>
+            <td><%= button_to "Delete", finance_path(fin), class: "btn btn-outline-danger", method: :delete, data: {confirm: "Are you sure?"} %></td>
+            
+            </tr>
+          <%end%>
+        </tbody>
+    </table>
+  </div>
+</div>

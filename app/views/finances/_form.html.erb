@@ -1,0 +1,21 @@
+
+<div class="content-wrapper">
+  <div class="row justify-content">
+    <div class="form-style-5">
+    <%= form_with(model: @finances, url: finances_path)  do |f|  %>
+      <div class="text-center">
+        <legend><strong>Salary Detail<strong></legend>
+        </div>
+          
+        <%= f.label :basic_salary %>
+        <%= f.text_field :basic_salary %><br>
+
+        <%= f.label :deduction %>
+        <%= f.text_field :deduction %><br>
+       
+        <%=f.submit "submit", class: "center" %>
+      
+      <%end%>
+    </div>
+  </div>
+</div>
