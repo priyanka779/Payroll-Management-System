@@ -23,7 +23,8 @@ class EmployeesController < ApplicationController
     else
       render :new 
     end
-  end 
+  end
+  
   def edit
     @employee = Employee.find(params[:id])
   end
@@ -33,9 +34,12 @@ class EmployeesController < ApplicationController
 
   def destroy
   end
+
   def blank
   end
+
   private
+  
   def employee_params
     params.require(:employee).permit(:employee_id,:date_of_birth,:gender,:mobile, :date_of_join,:city,:designation)
   end
